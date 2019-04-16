@@ -17,7 +17,7 @@ Options:
   --help       Show help                                               [boolean]
 ```
 
-Example: `./index.js test.strate`
+Example: `./index.js test.strata`
 
 ```sh
 ILP-PING test.strata
@@ -30,3 +30,9 @@ ILP_FULFILL from test.strata: time=258.038767ms
 4 ILP_PREPARE packets sent, 4 ILP_FULFILL received, 0.0% packet loss
 rtt min/avg/max/mdev = 258.039/478.659/818.427/207.942
 ```
+
+## Disclaimer
+
+This software is in a very early stage, expect breaking changes.
+
+The core ping functionality is based on [moneyd-gui](https://github.com/interledgerjs/moneyd-gui).

@@ -1,0 +1,21 @@
+{
+  "name": "ilp-ping",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ilp-ping": "./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ilp-packet": "^3.0.8",
+    "ilp-plugin": "^3.2.1",
+    "ilp-protocol-ildcp": "^2.0.1",
+    "oer-utils": "^4.0.0",
+    "yargs": "^13.2.2"
+  }
+}

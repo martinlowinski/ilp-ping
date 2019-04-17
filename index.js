@@ -10,6 +10,7 @@ const log = require('ilp-logger')('ilp-ping')
 
 const DEFAULT_NUM_PREPARE = 4
 const DEFAULT_EXPIRATION_DURATION = 30000
+const DEFAULT_AMOUNT = 100
 
 const die = (message) => {
   console.error(message)
@@ -29,6 +30,10 @@ const argv = require('yargs')
       description: 'expiration duration of prepare packets'
     })
     .default('expiration', DEFAULT_EXPIRATION_DURATION)
+    .option('amount', {
+      description: 'amount used in prepare packets'
+    })
+    .default('amount', DEFAULT_AMOUNT)
     .option('destination', {
       describe: 'destination to ping'
     })
@@ -80,7 +85,7 @@ class Ping {
     const start = process.hrtime();
     const result = await this.plugin.sendData(IlpPacket.serializeIlpPrepare({
       destination,
-      amount: '100',
+      amount: argv.amount.toString(),
       executionCondition: condition,
       expiresAt: new Date(Date.now() + argv.expiration),
       data: writer.getBuffer()

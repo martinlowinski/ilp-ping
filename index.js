@@ -100,6 +100,7 @@ class Ping {
 
 async function run () {
   console.log(`ILP-PING ${destination}`);
+  log.debug(`Using amount=${argv.amount} and expiration=${argv.expiration}ms`)
 
   const p = new Ping();
   await p.init();

@@ -7,14 +7,15 @@
 Make sure you're running a local ILP provider. If you don't have one, take a look at [moneyd](https://github.com/sharafian/moneyd) or read the getting started guide on [interledger.org](https://interledger.org).
 
 ```
-index.js <destination>
-
-ping destination
+ilp-ping [options] <destination>
 
 Options:
-  --version    Show version number                                     [boolean]
-  --count, -c  Stop after sending count number of packets           [default: 4]
-  --help       Show help                                               [boolean]
+  --version      Show version number                                   [boolean]
+  --count, -c    stop after sending count number of packets         [default: 4]
+  --expiration   expiration duration of prepare packets         [default: 30000]
+  --amount       amount used in prepare packets                   [default: 100]
+  --destination  destination to ping
+  --help         Show help                                             [boolean]
 ```
 
 Example: `./index.js test.strata`

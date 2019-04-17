@@ -8,7 +8,8 @@ const ILDCP = require('ilp-protocol-ildcp')
 const { Writer } = require('oer-utils')
 const log = require('ilp-logger')('ilp-ping')
 
-const DEFAULT_NUM_PREPARE = 4;
+const DEFAULT_NUM_PREPARE = 4
+const DEFAULT_EXPIRATION_DURATION = 30000
 
 const die = (message) => {
   console.error(message)
@@ -23,7 +24,11 @@ const argv = require('yargs')
       alias: 'c',
       description: 'stop after sending count number of packets'
     })
-    .default('c', DEFAULT_NUM_PREPARE)
+    .default('count', DEFAULT_NUM_PREPARE)
+    .option('expiration', {
+      description: 'expiration duration of prepare packets'
+    })
+    .default('expiration', DEFAULT_EXPIRATION_DURATION)
     .option('destination', {
       describe: 'destination to ping'
     })
@@ -77,7 +82,7 @@ class Ping {
       destination,
       amount: '100',
       executionCondition: condition,
-      expiresAt: new Date(Date.now() + 30000),
+      expiresAt: new Date(Date.now() + argv.expiration),
       data: writer.getBuffer()
     }))
     const diff = process.hrtime(start);

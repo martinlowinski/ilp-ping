@@ -44,6 +44,9 @@ const argv = require('yargs')
 const destination = argv.url || argv._[0]
 if (argv.destination && argv._[0]) die('cannot specify --destination and positional <destination>')
 if (!destination) die('must specify a destination with positional <destination> or --destination')
+if (argv.count <= 0) die('<count> must be greater than 0')
+if (argv.amount <= 0) die('<amount> must be greater than 0')
+if (argv.expiration <= 0) die('<expiration> must be greater than 0')
 
 async function run () {
   console.log(`ILP-PING ${destination}`);

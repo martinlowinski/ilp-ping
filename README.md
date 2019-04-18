@@ -1,4 +1,7 @@
-# ILP-PING
+# ILP ping [![npm][npm-image]][npm-url]
+
+[npm-image]: https://img.shields.io/npm/v/ilp-ping.svg?style=flat
+[npm-url]: https://npmjs.org/package/ilp-ping
 
 > Command-line tool to send ILP test packets to a node
 

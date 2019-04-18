@@ -66,4 +66,4 @@ From [interledger/rfcs/issues/433](https://github.com/interledger/rfcs/issues/43
 
 This software is in a very early stage, expect breaking changes.
 
-The core ping functionality is based on [moneyd-gui](https://github.com/interledgerjs/moneyd-gui).
+The core ping functionality is based on [moneyd-gui](https://github.com/interledgerjs/moneyd-gui) and [connector.land](https://github.com/interledger/connector.land).
